@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv2gr581yj2s3"]
+
+[ext_resource type="Script" path="res://scripts/spawner_box.gd" id="1_p3fje"]
+
+[node name="SpawnerBox" type="RayCast2D"]
+position = Vector2(528, 88)
+target_position = Vector2(0, 160)
+script = ExtResource("1_p3fje")

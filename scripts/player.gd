@@ -9,5 +9,6 @@ func _physics_process(delta: float) -> void:
 		velocity = direction * player_resource.speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, player_resource.speed)
+		velocity.y = move_toward(velocity.y, 0, player_resource.speed)
 
 	move_and_slide()

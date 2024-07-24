@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="deliveryGame"
-run/main_scene="res://scenes/player/level.tscn"
+run/main_scene="res://levels/level.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
 [autoload]
 
-Globals="*res://globals.gd"
+Globals="*res://scripts/globals.gd"
 
 [debug]
 
