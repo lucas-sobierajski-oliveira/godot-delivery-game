@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmvlf6tlmmvlr"]
+
+[ext_resource type="Texture2D" uid="uid://c1ybymfhtyseh" path="res://assets/suv.png" id="1_xmcio"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uo1md"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hped"]
+size = Vector2(32, 16)
+
+[node name="StaticCar" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_uo1md")
+gravity_scale = 0.0
+linear_velocity = Vector2(-200, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xmcio")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8hped")

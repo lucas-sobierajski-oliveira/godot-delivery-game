@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="deliveryGame"
+run/main_scene="res://scenes/player/level.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
@@ -21,6 +22,11 @@ Globals="*res://globals.gd"
 [debug]
 
 gdscript/warnings/untyped_declaration=2
+
+[display]
+
+window/size/viewport_width=648
+window/size/viewport_height=324
 
 [rendering]
 

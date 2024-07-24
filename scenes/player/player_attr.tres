@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="PlayerResource" load_steps=2 format=3 uid="uid://bav5oqn8anht6"]
+
+[ext_resource type="Script" path="res://scenes/player/player_rerource.gd" id="1_ijnee"]
+
+[resource]
+script = ExtResource("1_ijnee")
+speed = 300
