@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://diwan13te03ji"]
 
-[ext_resource type="Script" path="res://levels/main.gd" id="1_4h1v1"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_4h1v1"]
 
 [node name="Main" type="Control"]
 layout_mode = 3

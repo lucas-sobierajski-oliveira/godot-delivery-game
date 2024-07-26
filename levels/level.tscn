@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/upgrade_manager.gd" id="2_g1aum"]
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="4_d8art"]
 [ext_resource type="PackedScene" uid="uid://b01nkqkde560" path="res://entities/player.tscn" id="5_mv5d0"]
-[ext_resource type="Script" path="res://levels/score.gd" id="7_06v3d"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="7_06v3d"]
 
 [node name="Level" type="Node2D"]
 
