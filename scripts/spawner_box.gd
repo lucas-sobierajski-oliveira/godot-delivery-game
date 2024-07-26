@@ -13,7 +13,6 @@ func start_timer(wait_time: int) -> void:
 	timer.timeout.connect(spawn_timer)
 	timer.start(wait_time)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func spawn_timer() -> void:
 	var min_spawn_range_y_value := position.y
@@ -27,7 +26,3 @@ func spawn_timer() -> void:
 	get_parent().add_child(car)
 	car.linear_velocity.x -= random_velocity
 	car.position = Vector2(position.x, random_spawn_y)
-	randomize()
-	
-	print(random_velocity)
-	print(random_spawn_y)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xdvmyqh2xh3r"]
+[gd_scene load_steps=7 format=3 uid="uid://xdvmyqh2xh3r"]
 
 [ext_resource type="Script" path="res://assets/game_manager.gd" id="1_ts638"]
 [ext_resource type="Script" path="res://scripts/spawner_manager.gd" id="2_70o3x"]
@@ -6,30 +6,12 @@
 [ext_resource type="Script" path="res://scripts/level_manager.gd" id="4_d8art"]
 [ext_resource type="PackedScene" uid="uid://b01nkqkde560" path="res://entities/player.tscn" id="5_mv5d0"]
 [ext_resource type="Script" path="res://levels/score.gd" id="7_06v3d"]
-[ext_resource type="PackedScene" uid="uid://bv2gr581yj2s3" path="res://entities/spawner_box.tscn" id="7_rcefv"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 168)
 zoom = Vector2(2, 2)
-
-[node name="GameManager" type="Node" parent="."]
-script = ExtResource("1_ts638")
-
-[node name="LevelManager" type="Node" parent="."]
-script = ExtResource("4_d8art")
-
-[node name="SpawnerManager" type="Node" parent="."]
-script = ExtResource("2_70o3x")
-
-[node name="UpgradeManager" type="Node" parent="."]
-script = ExtResource("2_g1aum")
-
-[node name="Player" parent="." instance=ExtResource("5_mv5d0")]
-position = Vector2(184, 152)
-
-[node name="SpawnerBox" parent="." instance=ExtResource("7_rcefv")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -46,5 +28,28 @@ offset_right = 11.0
 offset_bottom = 13.096
 grow_horizontal = 2
 grow_vertical = 2
-text = "00"
+text = "0"
 script = ExtResource("7_06v3d")
+
+[node name="WolrdManager" type="Node" parent="."]
+
+[node name="UpgradeManager" type="Node" parent="WolrdManager"]
+script = ExtResource("2_g1aum")
+
+[node name="LevelManager" type="Node" parent="WolrdManager"]
+script = ExtResource("4_d8art")
+
+[node name="SpawnerManager" type="Node" parent="WolrdManager"]
+script = ExtResource("2_70o3x")
+
+[node name="GameManager" type="Node" parent="WolrdManager" node_paths=PackedStringArray("spawner_manager", "upgrade_manager", "level_manager")]
+script = ExtResource("1_ts638")
+spawner_manager = NodePath("../SpawnerManager")
+upgrade_manager = NodePath("../UpgradeManager")
+level_manager = NodePath("../LevelManager")
+
+[node name="SpawnerBoxGroup" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource("5_mv5d0")]
+position = Vector2(184, 152)

@@ -7,3 +7,4 @@ signal loose_game
 signal add_score
 
 var score := 0
+var dificult := 1
