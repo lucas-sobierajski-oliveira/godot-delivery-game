@@ -5,10 +5,10 @@ extends Node
 @export var level_manager: LevelManager
 
 func _ready() -> void:
-	Globals.upgrade_time.connect(upgrade_time)
 	Globals.start_level.connect(start_level)
 	Globals.end_level.connect(end_level)
 	Globals.loose_game.connect(loose_game)
+	Globals.add_upgrade.connect(add_upgrade)
 	start_level()
 
 func start_level() -> void:
@@ -21,12 +21,6 @@ func end_level() -> void:
 	level_manager.pause_timer()
 	spawner_manager.remove_spawner()
 	Globals.dificult += 1
-	# bloquar o carro do player
-	# mensagem para informar o fim da corrida
-	pass
-	
-func upgrade_time() -> void:
-	level_manager.pause_timer()
 	upgrade_manager.show_upgrade_view()
 	pass
 	
@@ -36,3 +30,6 @@ func loose_game() -> void:
 	# bloquar o carro do player
 	# mensagem para informar que o plyer perdeu
 	pass
+
+func add_upgrade(value: int) -> void:
+	upgrade_manager.add_upgrade(value)
